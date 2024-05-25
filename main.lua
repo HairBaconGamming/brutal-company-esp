@@ -306,6 +306,9 @@ end
 for i,v in pairs(Items:GetChildren()) do
 	if v:IsA("Tool") and v:FindFirstChild("Value") and v:FindFirstChild("Handle") then
 		setup(v,"Item")
+		if v.Value.Value >= 50 then
+			loadednotification(v.Name,"Value: ".. v.Value.Value,3)
+		end
 	end
 end
 
@@ -324,6 +327,9 @@ Items.ChildAdded:Connect(function(v)
 	task.wait(5)
 	if v:IsA("Tool") and v:FindFirstChild("Value") and v:FindFirstChild("Handle") then
 		setup(v,"Item")
+		if v.Value.Value >= 50 then
+			loadednotification(v.Name,"Value: ".. v.Value.Value,3)
+		end
 	end
 end)
 
